@@ -4,11 +4,13 @@ string, lst = " ", []   # built-in classes
 
 
 class Person:     # class Name
-    species = "human"
+
+    nationality = "Indian"  # Class variable  are kind of default value for a class
 
     def __init__(self, name, age, sex, city):  # Constructor is default method in class
         self.name = name
-        self.age = age     # Class Attribute
+        # Class Attribute are the instantenous values which can be change when object changes
+        self.age = age
         self.sex = sex
         self.city = city   # "self" is an common argument to hold the different object name
 
@@ -28,7 +30,8 @@ class Person:     # class Name
 person1 = Person('Sanjay', 19, 'male', 'Chennai')   # Person object1
 person2 = Person('Ramya', 14, 'female', 'Hyderabad')  # Person object2
 
-print(Person.species)
-print(person1.species)
-person2.species = 'mammals'
-print(person2.species)
+Person.nationality = "American"  # changing class variable for the entire class
+person1.nationality = "Indian"  # changing class variable for the particular class
+
+person1.name   # accessing the specific attribute of a specific object
+person1.person_bio()  # accessing the specific method of a specific object
