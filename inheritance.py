@@ -11,10 +11,8 @@ class bike:
     def engine(self):
         return f"The engine is {self.CC}"
 
-# parent class
 
-
-class electric_vehicle:
+class electric_vehicle:  # parent class
     def __int___(self, charging_time):
         self.charging_time = charging_time
 
@@ -38,14 +36,16 @@ class R15(yamaha):
         super().__init__(CC, mileage, year_of_manufactured, type_of_engine, top_speed)
         self.top_speed = top_speed
 
+
 # This class falls under the mutliple inheritence
 # This class inherits bike and electric_vehicle class at a same time
-
-
 class ola(bike, electric_vehicle):
     def __init__(self, color, CC, mileage, year_of_manufactured, charging_time):
         bike.__init__(self, color, CC, mileage, year_of_manufactured)
         electric_vehicle.__init__(self, charging_time)
+
+        """To inherits the attributes of the parents class in multiple inheritance without using 'super()' method we are 
+        using the name of the parent class itself and also we put 'self' as a first argument for respective constructors """
 
 
 # bike1 object used to access the yamaha class
