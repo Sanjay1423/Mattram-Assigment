@@ -9,15 +9,15 @@ class bike:
         self.year_of_manufactured = year_of_manufactured
 
     def engine(self):
-        return f"The engine is {self.CC}"
+        return f"The engine is {self.CC} CC"
 
 
-class electric_vehicle:  # parent class
-    def __int___(self, charging_time):
+class electric_vehicle:   # parent class
+    def __init__(self, charging_time):
         self.charging_time = charging_time
 
     def charging(self):
-        return f"It takes {self.charging_time} to charge"
+        return f"It will take {self.charging_time} to charge the bike"
 
 
 # Child Class of bike
@@ -25,7 +25,7 @@ class electric_vehicle:  # parent class
 class yamaha(bike):
     def __init__(self, color, CC, mileage, year_of_manufactured, type_of_engine):
         # super() method is used to get the attributes of the parent class
-        super().__init__(color, CC, mileage, year_of_manufactured,)
+        super().__init__(color, CC, mileage, year_of_manufactured)
         self.type_of_engine = type_of_engine
 
 
@@ -33,7 +33,7 @@ class yamaha(bike):
 # This is class falls under the mutlevel inheritance
 class R15(yamaha):
     def __init__(self, color, CC, mileage, year_of_manufactured, type_of_engine, top_speed):
-        super().__init__(CC, mileage, year_of_manufactured, type_of_engine, top_speed)
+        super().__init__(color, CC, mileage, year_of_manufactured, type_of_engine)
         self.top_speed = top_speed
 
 
@@ -54,9 +54,9 @@ bike1.engine()
 
 
 # bike2 object used to access the R15 class
-bike2 = R15('blue', 200, 35, 2020, '4 stroke', 150)
+bike2 = R15('black', 150, 40, 2020, '4 stroke', 200)
 bike2.top_speed
 
 # bike3 object used to access the ola class
-bike3 = ola('black', 100, 45, 2022, 3)
-print(bike3.charging())
+bike3 = ola('red', 100, 50, 2021, 5)
+print(bike3.year_of_manufactured)
